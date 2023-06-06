@@ -16,3 +16,5 @@ else:
     m = int(result[-1]) * -1
     if m < 6 and m != 0:
         print("Last digit of {} is {} and is less than 6 and not 0".format(number, m))
+    else:
+        print("Last digit of {} is 0 and is 0".format(number))
