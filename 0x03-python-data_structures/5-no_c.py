@@ -6,5 +6,5 @@ def no_c(my_string):
         for i in my_string:
             if i != "c" and i != "C":
                 b.append(i)
-            new_string = " ".join(b)
+            new_string = "".join(b)
     return new_string
