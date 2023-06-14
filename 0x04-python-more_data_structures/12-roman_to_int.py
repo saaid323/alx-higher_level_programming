@@ -5,9 +5,8 @@ def roman_to_int(roman_string):
     if isinstance(roman_string, str):
         for i in roman_string:
             if i in r_dict:
-                if i == 'I' and roman_string[1] != 'I':
-                    total -= r_dict[i]
-                else:
-                    total += r_dict[i]
+                if roman_string[0] == 'I' and roman_string[1] != 'I':
+                    total -= 1
+                total += r_dict[i]
         return total
     return 0
