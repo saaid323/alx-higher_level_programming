@@ -2,6 +2,7 @@
 
 """Square"""
 
+
 class Square:
     """Square"""
     def __int__(self, x):
