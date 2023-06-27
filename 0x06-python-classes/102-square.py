@@ -50,4 +50,3 @@ class Square:
         if isinstance(other, Square):
             return self.area() <= other.area()
         return NotImplemented
-
