@@ -49,10 +49,6 @@ class Rectangle:
             return 0
         return (self.__height + self.__width) * 2
 
-    @classmethod
-    def square(cls, size=0):
-        return cls(size, size)
-
     def __del__(self):
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
@@ -76,3 +72,7 @@ class Rectangle:
             return rect_1
         elif rect_2.area() > rect_1.area():
             return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        return cls(size, size)
