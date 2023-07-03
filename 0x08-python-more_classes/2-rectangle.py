@@ -2,6 +2,8 @@
 """
 Rectangle
 """
+
+
 class Rectangle:
     """
     Define Rectangle
