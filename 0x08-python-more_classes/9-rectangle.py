@@ -51,7 +51,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        return (cls(size, size))
+        return cls(size, size)
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
