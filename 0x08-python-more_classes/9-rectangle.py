@@ -13,13 +13,17 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
+
+    def __del__(self):
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
 
     @property
     def width(self):
-        return self.__width
+        return self._width
 
     @width.setter
     def width(self, value):
@@ -27,11 +31,11 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        self._width = value
 
     @property
     def height(self):
-        return self.__height
+        return self._height
 
     @height.setter
     def height(self, value):
@@ -39,28 +43,26 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        self._height = value
 
     def area(self):
-        return self.__height * self.__width
+        return self.width * self.height
 
     def perimeter(self):
-        if self.__height == 0 or self.__width == 0:
+        if self.width == 0 or self.height == 0:
             return 0
-        return (self.__height + self.__width) * 2
-
-    def __del__(self):
-        Rectangle.number_of_instances -= 1
-        print("Bye rectangle...")
+        return 2 * (self.width + self.height)
 
     def __str__(self):
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return ""
-        return "\n".join([str(self.print_symbol) * self.__width
-                          for _ in range(self.height)])
+        rect_str = ""
+        for _ in range(self.height):
+            rect_str += str(self.print_symbol) * self.width + "\n"
+        return rect_str.rstrip()
 
     def __repr__(self):
-        return f"Rectangle{(self.__width, self.__height)}"
+        return f"Rectangle({self.width}, {self.height})"
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
@@ -70,5 +72,9 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
-        elif rect_2.area() > rect_1.area():
+        else:
             return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        return cls(size, size)
