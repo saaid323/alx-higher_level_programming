@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 class LockedClass:
     """
      prevents the user from dynamically creating new
