@@ -62,3 +62,8 @@ if argument is error:
 	Traceback (most recent call last):
         ...
         ValueError: cannot convert NaN to integer
+	
+	>>> add_integer(float('NaN'), 4)
+        Traceback (most recent call last):
+        ...
+        ValueError: cannot convert NaN to integer
