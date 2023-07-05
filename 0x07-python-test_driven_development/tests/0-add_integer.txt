@@ -49,21 +49,21 @@ if the argument is infinite:
 	>>> add_integer(float('inf'))
 	Traceback (most recent call last):
         ...
-        OverflowError: Float overflow
+        OverflowError: cannot convert float infinity to integer
 
 	>>> add_integer(float('inf'), 7)
         Traceback (most recent call last):
         ...
-        OverflowError: Float overflow
+        OverflowError: cannot convert float infinity to integer
 
-if argument is error:
+if argument is NaN:
 ::
 	>>> add_integer(float('nan'))
 	Traceback (most recent call last):
         ...
-        ValueError: cannot convert NaN to integer
+        ValueError: cannot convert float NaN to integer
 	
 	>>> add_integer(float('nan'), 4)
         Traceback (most recent call last):
         ...
-        ValueError: cannot convert NaN to integer
+        ValueError: cannot convert float NaN to integer
