@@ -46,24 +46,24 @@ If one argument not float or integer TypeError is Raise:
 
 if the argument is infinite:
 ::
-	>>> add_integer(float('-inf'))
+	>>> add_integer(float('inf'))
 	Traceback (most recent call last):
         ...
         OverflowError: Float overflow
 
-	>>> add_integer(float('-inf'), 7)
+	>>> add_integer(float('inf'), 7)
         Traceback (most recent call last):
         ...
         OverflowError: Float overflow
 
 if argument is error:
 ::
-	>>> add_integer(float('NaN'))
+	>>> add_integer(float('nan'))
 	Traceback (most recent call last):
         ...
         ValueError: cannot convert NaN to integer
 	
-	>>> add_integer(float('NaN'), 4)
+	>>> add_integer(float('nan'), 4)
         Traceback (most recent call last):
         ...
         ValueError: cannot convert NaN to integer
