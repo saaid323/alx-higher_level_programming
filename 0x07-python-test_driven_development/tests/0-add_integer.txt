@@ -43,3 +43,22 @@ If one argument not float or integer TypeError is Raise:
         Traceback (most recent call last):
         ...
         TypeError: a must be an integer
+
+if the argument is infinite:
+::
+	>>> add_integer(float('-inf'))
+	Traceback (most recent call last):
+        ...
+        OverflowError: Float overflow
+
+	>>> add_integer(float('-inf'), 7)
+        Traceback (most recent call last):
+        ...
+        OverflowError: Float overflow
+
+if argument is error:
+::
+	>>> add_integer(float('NaN'))
+	Traceback (most recent call last):
+        ...
+        ValueError: cannot convert NaN to integer
