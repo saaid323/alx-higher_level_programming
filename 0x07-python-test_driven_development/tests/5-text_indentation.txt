@@ -24,6 +24,11 @@ If the argument is not string
 	==================================
 	TypeError: text must be a string
 
+	>>> text_indentation(["6", 8, ["l", 0]])
+        Traceback (most recent call last):
+        ==================================
+        TypeError: text must be a string
+
 If th string is balnk lines
 ::
 	>>> text_indentation("")
