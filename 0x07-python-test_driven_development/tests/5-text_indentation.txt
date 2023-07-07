@@ -24,6 +24,11 @@ If the argument is not string
 	==================================
 	TypeError: text must be a string
 
+If th string is balnk lines
+::
+	>>> text_indentation("")
+	
+
 If there is missing argument
 ::
 	text_indentation()
