@@ -49,3 +49,4 @@ checking if there is NaN
 	Traceback (most recent call last):
         ==================================
         TypeError: matrix must be a matrix (list of lists) of integers/floats
+
