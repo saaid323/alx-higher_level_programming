@@ -5,6 +5,7 @@ class MyList inherits from list:
         >>> MyList = __import__('1-my_list').MyList
 
 If argument is int
+::
         >>> my_list = MyList()
         >>> my_list.append(1)
         >>> my_list.append(4)
@@ -25,6 +26,7 @@ If argument is int
         [-6, -2, 1, 2, 3, 4, 5]
 
 If arguments are negative
+::
 	>>> m = MyList()
         >>> m.append(-1)
         >>> m.append(-4)
