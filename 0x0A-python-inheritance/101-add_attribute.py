@@ -9,6 +9,6 @@ def add_attribute(obj, name, value):
     """
     adds a new attribute to an object if it’s possible
     """
-    if isinstance(obj, str):
+    if isinstance(obj, (str, int)):
         raise TypeError("can't add new attribute")
     obj.__setattr__(name, value)
