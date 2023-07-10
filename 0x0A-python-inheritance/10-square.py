@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 Rectangle = __import__('9-rectangle').Rectangle
 """
-Square
+Define Square
 """
 
 
 class Square(Rectangle):
     """
-    Square
+    Square that inherits from Rectangle
     """
 
     def __init__(self, size):
