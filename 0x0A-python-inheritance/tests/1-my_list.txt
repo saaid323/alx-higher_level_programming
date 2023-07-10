@@ -22,5 +22,5 @@ If argument is int
 	>>> my_list.append(-6)
 	>>> print(my_list)
         [1, 4, 2, 3, 5, -2, -6]
-	 >>> my_list.print_sorted()
+	>>> my_list.print_sorted()
         [-6, -2, 1, 2, 3, 4, 5]
