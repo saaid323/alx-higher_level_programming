@@ -1,0 +1,40 @@
+Checking for module docstring:
+         >>> l = __import__("7-base_geometry").__doc__
+         >>> len(l) > 1
+         True
+
+Checking for class docstring:
+         >>> l = __import__("7-base_geometry").BaseGeometry.__doc__
+         >>> len(l) > 1
+         True
+
+Checking for method docstring:
+          >>> l = __import__("").BaseGeometry.area.__doc__
+          >>> len(l) > 1
+          True
+
+Checking for method docstring:
+          >>> l = __import__("").BaseGeometry.integer_validator.__doc__
+          >>> len(l) > 1
+          True
+
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Does not Raises exception
+::
+	>>> bg.integer_validator("my_int", 12)
+	>>> bg.integer_validator("width", 89)
+
+Raises exception
+::
+	>>> try:
+	.......bg.integer_validator("name", "John")
+	>>> except Exception as e:
+    	........print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] name must be an integer
+
+
+	>>> try:
+	.......bg.integer_validator("age", 0)
+	>>> except Exception as e:
+	........print("[{}] {}".format(e.__class__.__name__, e))
