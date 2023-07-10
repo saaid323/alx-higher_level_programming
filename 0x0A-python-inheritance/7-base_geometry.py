@@ -1,7 +1,13 @@
 #!/usr/bin/python3
+"""
+Module BaseGeometry
+"""
 
 
 class BaseGeometry:
+    """
+    class BaseGeometry
+    """
     def area(self):
         """
         raises an Exception with the message area() is not implemented
