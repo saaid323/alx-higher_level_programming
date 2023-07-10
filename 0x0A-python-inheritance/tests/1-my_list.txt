@@ -33,9 +33,9 @@ If arguments are negative
         >>> m.append(-2)
         >>> m.append(-3)
         >>> m.append(-5)
-        >>> print(my_list)
+        >>> print(m)
         [-1, -4, -2, -3, -5]
-        >>> my_list.print_sorted()
+        >>> m.print_sorted()
         [-5, -4, -3, -2, -1]
-        >>> print(my_list)
+        >>> print(m)
         [-1, -4, -2, -3, -5]
