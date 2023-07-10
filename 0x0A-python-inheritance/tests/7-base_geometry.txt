@@ -19,6 +19,7 @@ Checking for method docstring:
           True
 
 	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+	>>> bg = BaseGeometry()
 
 Does not Raises exception
 ::
