@@ -1,7 +1,8 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 BaseGeometry
 """
+
 
 class BaseGeometry:
     """
