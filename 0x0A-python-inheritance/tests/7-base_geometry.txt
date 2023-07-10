@@ -1,6 +1,6 @@
 Checking for module docstring:
          >>> l = __import__("7-base_geometry").__doc__
-         >>> len(l) > 1
+         >>> len(l) => 1
          True
 
 Checking for class docstring:
@@ -9,12 +9,12 @@ Checking for class docstring:
          True
 
 Checking for method docstring:
-          >>> l = __import__("").BaseGeometry.area.__doc__
-          >>> len(l) > 1
+          >>> l = __import__("7-base_geometry").BaseGeometry.area.__doc__
+          >>> len(l) => 1
           True
 
 Checking for method docstring:
-          >>> l = __import__("").BaseGeometry.integer_validator.__doc__
+          >>> l = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
           >>> len(l) > 1
           True
 
