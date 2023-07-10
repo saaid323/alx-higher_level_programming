@@ -1,8 +1,8 @@
 #!/usr/bin/python3
+"""
+Square
+"""
 Rectangle = __import__('9-rectangle').Rectangle
-"""
-Define Square
-"""
 
 
 class Square(Rectangle):
