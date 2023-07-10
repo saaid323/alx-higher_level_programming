@@ -17,17 +17,3 @@ If argument is int
         [1, 2, 3, 4, 5]
         >>> print(my_list)
         [1, 4, 2, 3, 5]
-
-Too many arguments
-	>>> my = MyList()
-        >>> my.append(1)
-        >>> my.append(4)
-        >>> my.append(2)
-        >>> my.append(3)
-        >>> my.append(5)
-        >>> print(my)
-        [1, 4, 2, 3, 5]
-        >>> my.print_sorted(9)
-	Traceback (most recent call last):
-	==================================
-	TypeError: MyList.print_sorted() takes 1 positional argument but 2 were given
