@@ -93,6 +93,7 @@ class Rectangle(Base):
                                                        self.y,
                                                        self.width,
                                                        self.height)
+
     def update(self, *args, **kwargs):
         """ print in stdout the Rectangle instance
         with the character # by taking care of x and y"""
