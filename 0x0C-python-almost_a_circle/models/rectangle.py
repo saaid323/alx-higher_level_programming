@@ -84,9 +84,6 @@ class Rectangle(Base):
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
 
-    def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
-
     def update(self, *args, **kwargs):
         if len(args) == 1:
             self.id = args[0]
@@ -111,4 +108,5 @@ class Rectangle(Base):
                 self.__y = value
 
     def to_dictionary(self):
-        return {"y": self.__y, "x": self.__x, "id": self.id, "width": self.__width, "height": self.__height}
+        return {"y": self.__y, "x": self.__x, "id": self.id,
+                "width": self.__width, "height": self.__height}
