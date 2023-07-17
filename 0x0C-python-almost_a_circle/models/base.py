@@ -111,3 +111,24 @@ class Base:
                         objects.append(obj)
 
             return objects
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        t = turtle.Turtle()
+        screen = turtle.Screen()
+        screen.setup(800, 600)
+
+        for rect in list_rectangles:
+            for _ in range(2):
+                t.forward(rect.width)
+                t.left(90)
+                t.forward(rect.height)
+                t.left(90)
+        for square in list_squares:
+            t.penup()
+            t.goto(square.x, square.y)
+            t.pendown()
+            for _ in range(4):
+                t.forward(square.size)
+                t.left(90)
+        screen.exitonclick()
