@@ -76,36 +76,3 @@ class Rectangle(Base):
 
     def area(self):
         return self.__height * self.__width
-
-    def display(self):
-        for _ in range(self.y):
-            print()
-        for _ in range(self.height):
-            print(" " * self.x + "#" * self.width)
-
-    def update(self, *args, **kwargs):
-        if len(args) == 1:
-            self.id = args[0]
-        if len(args) >= 2:
-            self.__width = args[1]
-        if len(args) >= 3:
-            self.__height = args[2]
-        if len(args) >= 4:
-            self.__x = args[3]
-        if len(args) >= 5:
-            self.__y = args[4]
-        for key, value in kwargs.items():
-            if key == 'id':
-                self.id = value
-            elif key == 'width':
-                self.__width = value
-            elif key == 'height':
-                self.__height = value
-            if key == 'x':
-                self.__x = value
-            if key == 'y':
-                self.__y = value
-
-    def to_dictionary(self):
-        return {"y": self.__y, "x": self.__x, "id": self.id,
-                "width": self.__width, "height": self.__height}
