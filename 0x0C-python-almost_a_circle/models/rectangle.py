@@ -13,11 +13,11 @@ class Rectangle(Base):
         """
         Initializing Rectangle
         """
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
