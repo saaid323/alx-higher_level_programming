@@ -37,7 +37,7 @@ class Base:
         of list_objs to a file"""
         file = cls.__name__ + '.json'
         li = []
-        if list_objs is None or list_objs == []:
+        if list_objs is None:
             csvfile.write("[]")
         if list_objs is not None:
             li = [obj.to_dictionary() for obj in list_objs]
@@ -96,37 +96,22 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """serializes and deserializes CSV"""
-        class_name = cls.__name__
-        file_name = class_name + ".csv"
-
-        with open(file_name, mode='r', newline='') as file:
-            reader = csv.reader(file)
-            objects = []
-
-            next(reader)
-
-            if class_name == "Rectangle":
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, mode='r', newline='') as file:
+                reader = csv.reader(file)
+                if cls.__name__ == "Rectangle":
+                    fields = ['id', 'width', 'height', 'x', 'y']
+                elif cls.__name__ == "Square":
+                    fields = ['id', 'size', 'x', 'y']
+                obj_list = []
                 for row in reader:
-                    if len(row) >= 5:
-                        obj = cls(0, 0)
-                        obj.id = int(row[0])
-                        obj.width = int(row[1])
-                        obj.height = int(row[2])
-                        obj.x = int(row[3])
-                        obj.y = int(row[4])
-                        objects.append(obj)
-
-            elif class_name == "Square":
-                for row in reader:
-                    if len(row) >= 4:
-                        obj = cls(0)
-                        obj.id = int(row[0])
-                        obj.size = int(row[1])
-                        obj.x = int(row[2])
-                        obj.y = int(row[3])
-                        objects.append(obj)
-
-            return objects
+                    data = [int(x) for x in row]
+                    obj = cls(*data)
+                    obj_list.append(obj)
+                return obj_list
+        except FileNotFoundError:
+            return []
 
     @staticmethod
     def draw(list_rectangles, list_squares):
