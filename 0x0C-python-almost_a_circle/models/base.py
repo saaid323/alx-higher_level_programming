@@ -2,6 +2,8 @@
 """
 The base class
 """
+import json
+import csv
 import turtle
 
 
@@ -27,8 +29,7 @@ class Base:
         of list_dictionaries"""
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -36,7 +37,7 @@ class Base:
         of list_objs to a file"""
         file = cls.__name__ + '.json'
         li = []
-        if list_objs is None or list_objs == []:
+        if list_objs is None:
             return '[]'
         if list_objs is not None:
             li = [obj.to_dictionary() for obj in list_objs]
