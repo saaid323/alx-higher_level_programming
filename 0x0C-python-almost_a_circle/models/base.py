@@ -2,6 +2,7 @@
 """
 The base class
 """
+import turtle
 
 
 class Base:
