@@ -93,3 +93,32 @@ class Rectangle(Base):
                                                        self.y,
                                                        self.width,
                                                        self.height)
+    def update(self, *args, **kwargs):
+        """ print in stdout the Rectangle instance
+        with the character # by taking care of x and y"""
+        if len(args) >= 1:
+            self.id = args[0]
+        if len(args) >= 2:
+            self.__width = args[1]
+        if len(args) >= 3:
+            self.__height = args[2]
+        if len(args) >= 4:
+            self.__x = args[3]
+        if len(args) >= 5:
+            self.__y = args[4]
+        for key, value in kwargs.items():
+            if key == 'id':
+                self.id = value
+            if key == 'width':
+                self.__width = value
+            if key == 'height':
+                self.__height = value
+            if key == 'x':
+                self.__x = value
+            if key == 'y':
+                self.__y = value
+
+    def to_dictionary(self):
+        """ assigns an argument to each attribute"""
+        return {"y": self.__y, "x": self.__x, "id": self.id,
+                "width": self.__width, "height": self.__height}
