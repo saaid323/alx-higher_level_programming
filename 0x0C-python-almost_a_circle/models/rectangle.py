@@ -71,8 +71,10 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
-        for _ in range(self.__height):
-            print("#" * self.__width)
+        for _ in range(self.y):
+            print()
+        for _ in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
@@ -99,3 +101,6 @@ class Rectangle(Base):
                 self.__x = value
             if key == 'y':
                 self.__y = value
+
+    def to_dictionary(self):
+        return {"y": self.__y, "x": self.__x, "id": self.id, "width": self.__width, "height": self.__height}
