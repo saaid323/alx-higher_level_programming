@@ -97,18 +97,15 @@ class Base:
         """serializes and deserializes CSV"""
         filename = cls.__name__ + ".csv"
         try:
-            with open(filename, mode='r', newline='') as file:
-                reader = csv.reader(file)
+            with open(filename, "r", newline="") as csvfile:
                 if cls.__name__ == "Rectangle":
-                    fields = ['id', 'width', 'height', 'x', 'y']
-                elif cls.__name__ == "Square":
-                    fields = ['id', 'size', 'x', 'y']
-                obj_list = []
-                for row in reader:
-                    data = [int(x) for x in row]
-                    obj = cls(*data)
-                    obj_list.append(obj)
-                return obj_list
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
+                list_dicts = [dict([key, int(value)] for key, value
+                              in dict_1.items())for dict_1 in list_dicts]
+            return [cls.create(**dict_1) for dict_1 in list_dicts]
         except FileNotFoundError:
             return []
 
