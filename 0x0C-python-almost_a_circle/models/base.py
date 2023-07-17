@@ -38,7 +38,7 @@ class Base:
         file = cls.__name__ + '.json'
         li = []
         if list_objs is None:
-            return []
+            csvfile.write("[]")
         if list_objs is not None:
             li = [obj.to_dictionary() for obj in list_objs]
         if file:
