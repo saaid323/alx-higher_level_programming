@@ -6,6 +6,6 @@ if (isNaN(x)) {
   console.log('Not a number');
 } else {
   for (let i = 0; i < x; i++) {
-          console.log('X'.repeat(x));
+    console.log('X'.repeat(x));
   }
 }
