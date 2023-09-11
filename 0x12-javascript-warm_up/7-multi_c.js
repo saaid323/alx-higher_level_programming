@@ -1,6 +1,6 @@
 #!/usr/bin/node
-import { argv } from 'node:process';
-const x = parseInt(argv[2]);
+
+const x = parseInt(process.argv[2]);
 
 if (isNaN(x)) {
   console.log('Missing number of occurrences');
