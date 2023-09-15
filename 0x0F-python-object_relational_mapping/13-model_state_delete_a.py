@@ -16,4 +16,3 @@ if __name__ == "__main__":
     for i in dele:
         session.delete(i)
     session.commit()
-    session.close()
