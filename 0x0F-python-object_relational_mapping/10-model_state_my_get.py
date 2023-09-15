@@ -12,7 +12,7 @@ if __name__ == "__main__":
         username, password, database_name), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    st_id = session.query(State).filter(State.name==sys.argv[4]).all()
+    st_id = session.query(State).filter(State.name == sys.argv[4]).all()
     if st_id:
         for i in st_id:
             print(i.id)
