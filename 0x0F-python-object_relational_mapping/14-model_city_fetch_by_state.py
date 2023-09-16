@@ -12,7 +12,8 @@ if __name__ == "__main__":
         user, password, database), pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    city = session.query(City, State).join(State).order_by(City.id).all()
-    for s, c in city:
-        print(f"{s.name}: ({c.id}) {c.name}")
+    city = session.query(State.name, City.id, City.name)
+    city = city.filter(State.id == City.state_id)
+    for state_name, city_id, city_name in city:
+        print(f"{state_name}: ({city_id}) {city_name}")
     session.close()
