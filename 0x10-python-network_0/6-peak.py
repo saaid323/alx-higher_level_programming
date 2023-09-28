@@ -3,8 +3,10 @@
 
 
 def find_peak(list_of_integers):
-    """t finds a peak in a list of unsorted integers. """
+    """finds a peak in a list of unsorted integers. """
     peak = None
+    if list_of_integers is None or list_of_integers == []:
+        return None
     li = list_of_integers
     for i in range(1, len(list_of_integers) - 1):
         if li[i] > li[i + 1] and  li[i] > li[i - 1]:
