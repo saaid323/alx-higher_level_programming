@@ -5,11 +5,9 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    q = None
+    q = ''
     if len(sys.argv) > 1:
         q = sys.argv[1]
-    else:
-        q = ''
     data = {"q": q}
     r = requests.post('http://0.0.0.0:5000/search_user', data=data)
     try:
