@@ -5,8 +5,5 @@ response."""
 import urllib.request
 import sys
 
-re = urllib.request.Request(sys.argv[1])
-with urllib.request.urlopen(re) as data:
-    if 'X-Request-Id' in data.headers:
-        x = data.headers['X-Request-Id']
-        print(x)
+with urllib.request.urlopen(sys.argv[1]) as data:
+    print(dict(data.headers).get("X-Request-Id"))
