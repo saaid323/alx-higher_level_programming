@@ -5,8 +5,8 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    try:
-        r = requests.get(sys.argv[1])
-        print(r.text)
-    except requests.exceptions.RequestException as e:
-        print("Error code: ", e.status_code)
+    r = requests.get(sys.argv[1])
+    if r.status_code >= 400:
+        print("Error code:", r.status_code)
+    else:
+        print("ndjfn", r.text)
