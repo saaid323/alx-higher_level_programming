@@ -5,6 +5,11 @@ response."""
 import urllib.request
 import sys
 
+if len(sys.argv) < 2:
+    exit()
+if not isinstance(sys.argv[1], str):
+    exit()
+
 with urllib.request.urlopen(sys.argv[1]) as data:
     if 'X-Request-Id' in data.headers:
         x = data.headers['X-Request-Id']
