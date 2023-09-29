@@ -9,4 +9,4 @@ if __name__ == "__main__":
     if r.status_code >= 400:
         print("Error code:", r.status_code)
     else:
-        print("ndjfn", r.text)
+        print(r.text)
