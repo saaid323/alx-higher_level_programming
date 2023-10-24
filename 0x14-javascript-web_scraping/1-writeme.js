@@ -2,5 +2,8 @@
 const fs = require('fs');
 path = process.argv[2];
 content = process.argv[3];
-fs.write(path, content, (err) => {
-	`
+fs.writeFile(path, content, (err) => {
+  if (err) {
+    console.log(err);
+  }
+});
